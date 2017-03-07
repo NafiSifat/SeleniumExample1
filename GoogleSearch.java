@@ -5,11 +5,6 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-/**
- * Search Google example.
- *
- * @author Rahul
- */
 public class GoogleSearch {
 	static WebDriver driver;
 	static Wait<WebDriver> wait;
@@ -23,7 +18,6 @@ public class GoogleSearch {
 		driver = new ChromeDriver();
 		wait = new WebDriverWait(driver, 30);
 		driver.get("http://www.google.com/");
-
 		boolean result;
 		try {
 			result = firstPageContainsQAANet();
@@ -38,9 +32,7 @@ public class GoogleSearch {
 		if (!result) {
 			System.exit(1);
 		}
-
 	}
-
 	private static boolean firstPageContainsQAANet() {
 		// type search query
 		driver.findElement(By.name("q")).sendKeys("qa consulting\n");
